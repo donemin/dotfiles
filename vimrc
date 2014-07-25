@@ -10,8 +10,8 @@ set sc 			"완성중인 명령을 표시
 set si 			"좀더 똑똑한 들여쓰기. (smartindent)
 set sw=4 		"자동들여쓰기를 4칸으로 설정. (shift width)
 set ts=4 		"tab 간격을 4칸으로 설정. (tab stop)
-set lines=38
 set hls
+set lines=60
 set ignorecase 	"검색 시 대소문자 무시
 set wildmenu
 set wildmode=list:longest,full
