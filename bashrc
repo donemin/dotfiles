@@ -91,7 +91,7 @@ git_branch() {
 	echo -en "$color_stat$git_branch"
 }
 
-PS1="\[$COLOR_NONE\]\u\[$BOLD_BLUE\]@\[$COLOR_NONE\]\h:\[$YELLOW\]"'\w':'`git_branch`'" \[$GRAY\]\[$COLOR_NONE\]"'\$'"\[$COLOR_NONE\] "
+PS1="[\[$COLOR_NONE\]\u\[$BOLD_BLUE\]@\[$COLOR_NONE\]\h:\[$YELLOW\]"'\w':'`git_branch`'"\[$GRAY\]\[$COLOR_NONE\]] \[$WHITE\]\t\[$COLOR_NONE\]\n$ "
 
 # Terminal
 # screen-256color if inside tmux, xterm-256color otherwise
@@ -105,7 +105,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h:\w\a\]$PS1"
     ;;
 *)
     ;;
@@ -114,7 +114,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    #alias ls='ls --color=auto'
+    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
